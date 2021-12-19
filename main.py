@@ -34,17 +34,28 @@ def escala(valor):
     rgb = f'{r}, {g}, {b}'
 
     hexadecimal = "#%02x%02x%02x" % (r, g, b)
+
+    #alterando a cor do fundo da tela
     tela['bg'] = hexadecimal
+
+    # alterando a entry
+    e_cor.delete(0, END)
+    e_cor.insert(0, hexadecimal)
+
 
 
 # função clicar
 
 def onClick():
+    # informar
+    tkinter.messagebox.showinfo('Cor', "a cor foi copiada")
+
+    #serve para criar botão copiar
     clip = Tk()
     clip.withdraw()
     clip.clipboard_append(e_cor.get())
     clip.destroy()
-    print('e Nos')
+    print('copiando o cógico hex')
 
 #  -- configurando  o frame direita ---------------
 
@@ -78,7 +89,6 @@ b_copy.grid(row=0, column=2, padx=5)
 #app name
 l_app_nome = Label(frame_baixo, text='<Seletor de Cores', bg=cor1, font=('Ivy', 13, 'bold'))
 l_app_nome.grid(row=0, column=3, padx=50)
-
 
 
 

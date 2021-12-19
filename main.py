@@ -20,7 +20,7 @@ tela.grid(row=0, column=0)
 frame_direita = Frame(janela, bg=cor1)
 frame_direita.grid(row=0, column=1, padx=5)
 
-frame_baixo = Frame(janela, bg='red')
+frame_baixo = Frame(janela, bg=cor1)
 frame_baixo.grid(row=1, column=0, columnspan=2, pady=20)
 
 # -- configurando  o frame direita ---------------
@@ -39,6 +39,24 @@ l_blue = Label(frame_direita, text='Blue', width=7, bg=cor1, fg='blue', anchor='
 l_blue.grid(row=2, column=0)
 s_blue = Scale(frame_direita, from_=0, to=255, length=150, bg=cor1, fg='blue', orient=HORIZONTAL)
 s_blue.grid(row=2, column=1)
+
+# -- configurando  o frame Baixo ---------------
+l_rgb = Label(frame_baixo, text='CÒDIGO RGB:', bg=cor1, font=('Ivy', 10, 'bold'))
+l_rgb.grid(row=0, column=0, padx=5)
+
+#Entry
+e_cor = Entry(frame_baixo, width=15, font=("Ivy", 10, "bold"), justify=CENTER)
+e_cor.grid(row=0, column=1, padx=10)
+
+# Button copy
+b_copy = Button(frame_baixo, text='copy', bg=cor1, font=('Ivy', 10, 'bold'), relief=RAISED, overrelief=RIDGE)
+b_copy.grid(row=0, column=2, padx=5)
+
+#app name
+l_app_nome = Label(frame_baixo, text='<Seletor de Cores', bg=cor1, font=('Ivy', 13, 'bold'))
+l_app_nome.grid(row=0, column=3, padx=50)
+
+
 
 
 janela.mainloop()
